@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "React Native Practice",
+    "slug": "react-native-basics",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/study-mark.png",
+    "scheme": "reactnativebasics",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#172A31",
+        "foregroundImage": "./assets/study-mark.png"
+      }
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/study-mark.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#FFFFFF",
+          "image": "./assets/study-mark.png",
+          "imageWidth": 100
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
