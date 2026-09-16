@@ -17,7 +17,7 @@ const topics = [
   { id: '6', name: 'ScrollView' },
 ];
 
-export default function Example({ header }: { header?: ReactNode }) {
+export default function Example({ header, footer }: { header?: ReactNode; footer?: ReactNode }) {
   const [items, setItems] = useState(topics.slice(0, 2));
   const [status, setStatus] = useState('ready');
   const [error, setError] = useState('');
@@ -29,7 +29,6 @@ export default function Example({ header }: { header?: ReactNode }) {
     setError('');
 
     try {
-      // Simulate waiting for data.
       await new Promise((resolve) => setTimeout(resolve, 700));
 
       if (simulateError) throw new Error('Could not load topics.');
@@ -103,7 +102,8 @@ export default function Example({ header }: { header?: ReactNode }) {
         ) : null
       }
       ListFooterComponent={
-        status !== 'ready' ? (
+        <View>
+        {status !== 'ready' ? (
           <ActivityIndicator />
         ) : (
           <Pressable
@@ -114,7 +114,9 @@ export default function Example({ header }: { header?: ReactNode }) {
           >
             <Text style={styles.buttonText}>Load more</Text>
           </Pressable>
-        )
+        )}
+        {footer}
+        </View>
       }
     />
   );

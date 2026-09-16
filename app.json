@@ -29,6 +29,21 @@
           "image": "./assets/study-mark.png",
           "imageWidth": 100
         }
+      ],
+      "expo-secure-store",
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Allow this app to take a photo for the media example.",
+          "photosPermission": "Allow this app to select a photo for the media example.",
+          "microphonePermission": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Allow this app to show your location in the device example."
+        }
       ]
     ],
     "experiments": {
